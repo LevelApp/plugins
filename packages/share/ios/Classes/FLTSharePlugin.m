@@ -124,7 +124,7 @@ static NSString *const PLATFORM_CHANNEL = @"plugins.flutter.io/share";
 
       [self shareText:shareText
                  subject:shareSubject
-          withController:[UIApplication sharedApplication].keyWindow.rootViewController
+          withController:((UINavigationController *) [UIApplication sharedApplication].keyWindow.rootViewController).topViewController
                 atSource:originRect];
       result(nil);
     } else if ([@"shareFiles" isEqualToString:call.method]) {
